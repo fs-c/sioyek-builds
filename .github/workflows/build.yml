@@ -50,9 +50,9 @@ jobs:
         CC:   gcc-9
         CXX:  g++-9
     - name: upload linux artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-        name: uploads
+        name: linux
         path: sioyek-release-linux.zip
     - name: Workaround apt-get cache permission (https://github.com/actions/cache/issues/324)
       run: |
@@ -101,7 +101,7 @@ jobs:
         CC:   gcc-9
         CXX:  g++-9
     - name: upload linux artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: uploads
         path: sioyek-release-linux-portable.zip
@@ -133,9 +133,9 @@ jobs:
       run: .\build_windows.bat non_portable
       
     - name: upload windows artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-        name: uploads
+        name: windows
         path: sioyek-release-windows.zip
         
   build-windows-portable:
@@ -161,9 +161,9 @@ jobs:
       run: .\build_windows.bat portable
       
     - name: upload windows artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-        name: uploads
+        name: windows-portable
         path: sioyek-release-windows-portable.zip
 
   build-mac:
@@ -205,7 +205,7 @@ jobs:
     - name: upload mac artifact
       uses: actions/upload-artifact@v1
       with:
-        name: uploads
+        name: mac
         path: sioyek-release-mac.zip
 
   build-mac-arm:
